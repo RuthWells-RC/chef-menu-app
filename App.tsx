@@ -337,4 +337,82 @@ const filterMenuItemsByCourse = (course: string): MenuItem[] => {
         </TouchableOpacity>
       </ScrollView>
     );
+};
+  
+  // Add Item Screen - Form to add new menu items
+  const renderAddItemScreen = () => {
+    return (
+      <ScrollView style={styles.screenContainer}>
+        <Text style={styles.screenTitle}>➕ Add New Menu Item</Text>
+
+        <View style={styles.form}>
+          <Text style={styles.label}>Dish Name</Text>
+          <TextInput
+            style={styles.input}
+            value={newDishName}
+            onChangeText={setNewDishName}
+            placeholder="Enter dish name"
+            placeholderTextColor="#999"
+          />
+
+          <Text style={styles.label}>Description</Text>
+          <TextInput
+            style={[styles.input, styles.textArea]}
+            value={newDescription}
+            onChangeText={setNewDescription}
+            placeholder="Enter description"
+            placeholderTextColor="#999"
+            multiline
+            numberOfLines={3}
+          />
+
+          <Text style={styles.label}>Select Course</Text>
+          <View style={styles.courseButtons}>
+            {(['Starter', 'Main', 'Dessert'] as const).map((course) => (
+              <TouchableOpacity
+                key={course}
+                style={[
+                  styles.courseButton,
+                  newCourse === course && styles.courseButtonActive,
+                ]}
+                onPress={() => setNewCourse(course)}
+              >
+                <Text
+                  style={[
+                    styles.courseButtonText,
+                    newCourse === course && styles.courseButtonTextActive,
+                  ]}
+                >
+                  {course}
+                </Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+
+          <Text style={styles.label}>Price (R)</Text>
+          <TextInput
+            style={styles.input}
+            value={newPrice}
+            onChangeText={setNewPrice}
+            placeholder="Enter price"
+            placeholderTextColor="#999"
+            keyboardType="numeric"
+          />
+
+          <TouchableOpacity
+            style={styles.submitButton}
+            onPress={handleAddMenuItem}
+          >
+            <Text style={styles.submitButtonText}>Add to Menu</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.backButton}
+            onPress={() => navigateToScreen('home')}
+          >
+            <Text style={styles.backButtonText}>Cancel</Text>
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
+    );
   };
