@@ -251,3 +251,26 @@ const filterMenuItemsByCourse = (course: string): MenuItem[] => {
     return (
       <ScrollView style={styles.screenContainer}>
         <Text style={styles.screenTitle}>🔍 Filter Menu</Text>
+      
+      {/* Course Filter Buttons */}
+        <View style={styles.filterButtons}>
+          {['All', 'Starter', 'Main', 'Dessert'].map((course) => (
+            <TouchableOpacity
+              key={course}
+              style={[
+                styles.filterButton,
+                selectedCourse === course && styles.filterButtonActive,
+              ]}
+              onPress={() => setSelectedCourse(course)}
+            >
+              <Text
+                style={[
+                  styles.filterButtonText,
+                  selectedCourse === course && styles.filterButtonTextActive,
+                ]}
+              >
+                {course}
+              </Text>
+            </TouchableOpacity>
+          ))}
+        </View>
