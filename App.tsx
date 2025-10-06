@@ -300,3 +300,41 @@ const filterMenuItemsByCourse = (course: string): MenuItem[] => {
       </ScrollView>
     );
   };
+
+   // Ratings Screen - Show items sorted by rating
+  const renderRatingsScreen = () => {
+    const sortedItems = getItemsSortedByRating();
+
+    return (
+      <ScrollView style={styles.screenContainer}>
+        <Text style={styles.screenTitle}>⭐ Menu Ratings</Text>
+        <Text style={styles.subtitle}>Sorted by highest rating</Text>
+
+        {sortedItems.map((item) => {
+          const rating = item.rating || 0;
+          const stars = '⭐'.repeat(Math.floor(rating));
+
+          return (
+            <View key={item.id} style={styles.ratingCard}>
+              <Text style={styles.dishName}>{item.dishName}</Text>
+              <Text style={styles.ratingText}>
+                {rating.toFixed(1)} {stars}
+              </Text>
+              <Text style={styles.description}>{item.description}</Text>
+              <View style={styles.ratingFooter}>
+                <Text style={styles.courseTag}>{item.course}</Text>
+                <Text style={styles.price}>R{item.price}</Text>
+              </View>
+            </View>
+          );
+        })}
+
+        <TouchableOpacity
+          style={styles.backButton}
+          onPress={() => navigateToScreen('home')}
+        >
+          <Text style={styles.backButtonText}>← Back to Home</Text>
+        </TouchableOpacity>
+      </ScrollView>
+    );
+  };
