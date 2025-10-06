@@ -65,4 +65,11 @@ const filterMenuItemsByCourse = (course: string): MenuItem[] => {
       if (menuItems[i].course === course) {
         filtered.push(menuItems[i]);
       }
-    }
+}
+    
+ return filtered;
+  };
+
+  // Get items sorted by rating
+  const getItemsSortedByRating = (): MenuItem[] => {
+    const sortedItems = [...menuItems];
