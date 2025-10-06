@@ -415,4 +415,17 @@ const filterMenuItemsByCourse = (course: string): MenuItem[] => {
         </View>
       </ScrollView>
     );
-  };
+};
+  
+// ============================================
+  // MAIN RENDER - Screen Router
+  // ============================================
+  return (
+    <SafeAreaView style={styles.container}>
+      {currentScreen === 'home' && renderHomeScreen()}
+      {currentScreen === 'filter' && renderFilterScreen()}
+      {currentScreen === 'ratings' && renderRatingsScreen()}
+      {currentScreen === 'add' && renderAddItemScreen()}
+    </SafeAreaView>
+  );
+}
