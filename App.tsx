@@ -216,3 +216,30 @@ const filterMenuItemsByCourse = (course: string): MenuItem[] => {
             </View>
           ))}
         </View>
+      
+      {/* Navigation Buttons */}
+        <View style={styles.navigationButtons}>
+          <TouchableOpacity
+            style={styles.navButton}
+            onPress={() => navigateToScreen('filter')}
+          >
+            <Text style={styles.navButtonText}>🔍 Filter by Course</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.navButton}
+            onPress={() => navigateToScreen('ratings')}
+          >
+            <Text style={styles.navButtonText}>⭐ View Ratings</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.navButton}
+            onPress={() => navigateToScreen('add')}
+          >
+            <Text style={styles.navButtonText}>➕ Add New Item</Text>
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
+    );
+  };
