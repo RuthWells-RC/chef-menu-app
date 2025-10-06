@@ -429,3 +429,256 @@ const filterMenuItemsByCourse = (course: string): MenuItem[] => {
     </SafeAreaView>
   );
 }
+
+// ============================================
+// STYLES (Color Scheme and Layout)
+// ============================================
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#1a1a1a',
+  },
+  screenContainer: {
+    flex: 1,
+    padding: 20,
+  },
+  screenTitle: {
+    fontSize: 32,
+    fontWeight: 'bold',
+    color: '#fff',
+    marginBottom: 8,
+  },
+  subtitle: {
+    fontSize: 16,
+    color: '#888',
+    marginBottom: 24,
+  },
+  statsCard: {
+    backgroundColor: '#2a2a2a',
+    padding: 20,
+    borderRadius: 12,
+    marginBottom: 16,
+    alignItems: 'center',
+  },
+  statsTitle: {
+    fontSize: 16,
+    color: '#888',
+    marginBottom: 8,
+  },
+  statsNumber: {
+    fontSize: 48,
+    fontWeight: 'bold',
+    color: '#4CAF50',
+  },
+  card: {
+    backgroundColor: '#2a2a2a',
+    padding: 20,
+    borderRadius: 12,
+    marginBottom: 16,
+  },
+  cardTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#fff',
+    marginBottom: 16,
+  },
+  averageRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingVertical: 8,
+    borderBottomWidth: 1,
+    borderBottomColor: '#333',
+  },
+  courseText: {
+    fontSize: 16,
+    color: '#fff',
+  },
+  priceText: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#4CAF50',
+  },
+  menuItem: {
+    backgroundColor: '#333',
+    padding: 16,
+    borderRadius: 8,
+    marginBottom: 12,
+  },
+  menuItemHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 8,
+  },
+  dishName: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#fff',
+    flex: 1,
+  },
+  courseTag: {
+    backgroundColor: '#4CAF50',
+    paddingHorizontal: 12,
+    paddingVertical: 4,
+    borderRadius: 12,
+    fontSize: 12,
+    color: '#fff',
+    fontWeight: 'bold',
+  },
+  description: {
+    fontSize: 14,
+    color: '#aaa',
+    marginBottom: 8,
+  },
+  menuItemFooter: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  price: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#4CAF50',
+  },
+  removeButton: {
+    backgroundColor: '#f44336',
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    borderRadius: 6,
+  },
+  removeButtonText: {
+    color: '#fff',
+    fontWeight: 'bold',
+    fontSize: 14,
+  },
+  navigationButtons: {
+    marginTop: 24,
+    marginBottom: 40,
+  },
+  navButton: {
+    backgroundColor: '#4CAF50',
+    padding: 16,
+    borderRadius: 8,
+    marginBottom: 12,
+    alignItems: 'center',
+  },
+  navButtonText: {
+    color: '#fff',
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+  filterButtons: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 8,
+    marginBottom: 20,
+  },
+  filterButton: {
+    backgroundColor: '#333',
+    paddingHorizontal: 20,
+    paddingVertical: 12,
+    borderRadius: 20,
+  },
+  filterButtonActive: {
+    backgroundColor: '#4CAF50',
+  },
+  filterButtonText: {
+    color: '#fff',
+    fontSize: 16,
+  },
+  filterButtonTextActive: {
+    fontWeight: 'bold',
+  },
+  resultCount: {
+    fontSize: 16,
+    color: '#888',
+    marginBottom: 16,
+  },
+  backButton: {
+    backgroundColor: '#333',
+    padding: 16,
+    borderRadius: 8,
+    marginTop: 24,
+    marginBottom: 40,
+    alignItems: 'center',
+  },
+  backButtonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  ratingCard: {
+    backgroundColor: '#2a2a2a',
+    padding: 16,
+    borderRadius: 8,
+    marginBottom: 12,
+  },
+  ratingText: {
+    fontSize: 18,
+    color: '#FFD700',
+    marginVertical: 8,
+  },
+  ratingFooter: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginTop: 8,
+  },
+  form: {
+    marginTop: 16,
+  },
+  label: {
+    fontSize: 16,
+    color: '#fff',
+    marginBottom: 8,
+    fontWeight: '600',
+  },
+  input: {
+    backgroundColor: '#2a2a2a',
+    color: '#fff',
+    padding: 12,
+    borderRadius: 8,
+    marginBottom: 16,
+    fontSize: 16,
+    borderWidth: 1,
+    borderColor: '#333',
+  },
+  textArea: {
+    height: 80,
+    textAlignVertical: 'top',
+  },
+  courseButtons: {
+    flexDirection: 'row',
+    gap: 8,
+    marginBottom: 16,
+  },
+  courseButton: {
+    flex: 1,
+    backgroundColor: '#333',
+    padding: 12,
+    borderRadius: 8,
+    alignItems: 'center',
+  },
+  courseButtonActive: {
+    backgroundColor: '#4CAF50',
+  },
+  courseButtonText: {
+    color: '#fff',
+    fontSize: 16,
+  },
+  courseButtonTextActive: {
+    fontWeight: 'bold',
+  },
+  submitButton: {
+    backgroundColor: '#4CAF50',
+    padding: 16,
+    borderRadius: 8,
+    alignItems: 'center',
+    marginBottom: 12,
+  },
+  submitButtonText: {
+    color: '#fff',
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+});
