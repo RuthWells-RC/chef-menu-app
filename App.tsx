@@ -51,11 +51,18 @@ const calculateAveragePriceByCourse = (): { [key: string]: number } => {
   };
 
    // Filter menu items by course using FOR loop and IF statement
-  const filterMenuItemsByCourse = (course: string): MenuItem[] => {
-    if (course === 'All') {
-      return menuItems;
+const filterMenuItemsByCourse = (course: string): MenuItem[] => {
+  if (course === 'All') {
+    return menuItems;
+  }
+
+  const filtered: MenuItem[] = [];
+
+}
+
+// Using FOR loop with IF statement
+    for (let i = 0; i < menuItems.length; i++) {
+      if (menuItems[i].course === course) {
+        filtered.push(menuItems[i]);
+      }
     }
-
-    const filtered: MenuItem[] = [];
-
-
