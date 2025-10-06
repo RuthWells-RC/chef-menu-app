@@ -274,3 +274,29 @@ const filterMenuItemsByCourse = (course: string): MenuItem[] => {
             </TouchableOpacity>
           ))}
         </View>
+
+        {/* Filtered Results */}
+        <Text style={styles.resultCount}>
+          Showing {filtered.length} items
+        </Text>
+
+        {filtered.map((item) => (
+          <View key={item.id} style={styles.menuItem}>
+            <Text style={styles.dishName}>{item.dishName}</Text>
+            <Text style={styles.description}>{item.description}</Text>
+            <View style={styles.menuItemFooter}>
+              <Text style={styles.courseTag}>{item.course}</Text>
+              <Text style={styles.price}>R{item.price}</Text>
+            </View>
+          </View>
+        ))}
+
+        <TouchableOpacity
+          style={styles.backButton}
+          onPress={() => navigateToScreen('home')}
+        >
+          <Text style={styles.backButtonText}>← Back to Home</Text>
+        </TouchableOpacity>
+      </ScrollView>
+    );
+  };
