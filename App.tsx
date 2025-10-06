@@ -12,9 +12,26 @@ const [newPrice, setNewPrice] = useState("");
 const [newImageUrl, setNewImageUrl] = useState("");
 
 // Calculate average price by course using FOR LOOP
-  const calculateAveragePriceByCourse = (): { [key: string]: number } => {
+const calculateAveragePriceByCourse = (): { [key: string]: number } => {
   const courseTotals: { [key: string]: { total: number; count: number } } = {};
-    
-    // Using FOR loop to iterate through menu items
-    for (let i = 0; i < menuItems.length; i++) {
-      const item = menuItems[i];
+
+  // Using FOR loop to iterate through menu items
+  for (let i = 0; i < menuItems.length; i++) {
+    const item = menuItems[i];
+    if (!courseTotals[item.course]) {
+      courseTotals[item.course] = { total: 0, count: 0 };
+    }
+
+    courseTotals[item.course].total += item.price;
+    courseTotals[item.course].count += 1;
+  }
+
+  const averages: { [key: string]: number } = {};
+
+  // Using FOR...IN loop to calculate averages
+  for (const course in courseTotals) {
+    averages[course] = courseTotals[course].total / courseTotals[course].count;
+  }
+
+  return averages;
+};
