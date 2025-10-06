@@ -10,3 +10,7 @@ const [newCourse, setNewCourse] = useState<"Starter" | "Main" | "Dessert">(
 );
 const [newPrice, setNewPrice] = useState("");
 const [newImageUrl, setNewImageUrl] = useState("");
+
+// Calculate average price by course using FOR LOOP
+  const calculateAveragePriceByCourse = (): { [key: string]: number } => {
+    const courseTotals: { [key: string]: { total: number; count: number } } = {};
