@@ -157,4 +157,9 @@ const filterMenuItemsByCourse = (course: string): MenuItem[] => {
         ]
       );
     }
+};
+  
+ // Navigate to screen (Screen Navigation)
+  const navigateToScreen = (screen: string) => {
+    setCurrentScreen(screen);
   };
