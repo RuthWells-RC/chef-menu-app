@@ -243,3 +243,11 @@ const filterMenuItemsByCourse = (course: string): MenuItem[] => {
       </ScrollView>
     );
   };
+
+  // Filter Screen - Filter items by course
+  const renderFilterScreen = () => {
+    const filtered = filterMenuItemsByCourse(selectedCourse);
+
+    return (
+      <ScrollView style={styles.screenContainer}>
+        <Text style={styles.screenTitle}>🔍 Filter Menu</Text>
