@@ -90,3 +90,32 @@ const filterMenuItemsByCourse = (course: string): MenuItem[] => {
 
     return sortedItems;
   };
+
+  // ============================================
+  // BUTTON PRESS HANDLERS (Handle Button Presses)
+  // ============================================
+
+  // Add new menu item (Handle text inputs)
+  const handleAddMenuItem = () => {
+    if (!newDishName || !newDescription || !newPrice) {
+      Alert.alert('Error', 'Please fill in all fields');
+      return;
+    }
+
+    const priceNum = parseFloat(newPrice);
+    if (isNaN(priceNum) || priceNum <= 0) {
+      Alert.alert('Error', 'Please enter a valid price');
+      return;
+    }
+
+    const newItem: MenuItem = {
+      id: nextId,
+      dishName: newDishName,
+      description: newDescription,
+      course: newCourse,
+      price: priceNum,
+      rating: 0,
+    };
+
+    setMenuItems([...menuItems, newItem]);
+    setNextId(nextId + 1);
