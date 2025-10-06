@@ -35,3 +35,9 @@ const calculateAveragePriceByCourse = (): { [key: string]: number } => {
 
   return averages;
 };
+
+// Get total number of menu items using WHILE LOOP
+  const getTotalMenuItems = (): number => {
+    let count = 0;
+    let i = 0;
+
