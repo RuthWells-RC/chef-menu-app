@@ -182,3 +182,37 @@ const filterMenuItemsByCourse = (course: string): MenuItem[] => {
           <Text style={styles.statsTitle}>Total Menu Items</Text>
           <Text style={styles.statsNumber}>{totalItems}</Text>
         </View>
+      
+        {/* Average Prices by Course */}
+        <View style={styles.card}>
+          <Text style={styles.cardTitle}>💰 Average Prices by Course</Text>
+          {Object.entries(averages).map(([course, avg]) => (
+            <View key={course} style={styles.averageRow}>
+              <Text style={styles.courseText}>{course}</Text>
+              <Text style={styles.priceText}>R{avg.toFixed(2)}</Text>
+            </View>
+          ))}
+        </View>
+      
+      {/* All Menu Items */}
+        <View style={styles.card}>
+          <Text style={styles.cardTitle}>📋 All Menu Items</Text>
+          {menuItems.map((item) => (
+            <View key={item.id} style={styles.menuItem}>
+              <View style={styles.menuItemHeader}>
+                <Text style={styles.dishName}>{item.dishName}</Text>
+                <Text style={styles.courseTag}>{item.course}</Text>
+              </View>
+              <Text style={styles.description}>{item.description}</Text>
+              <View style={styles.menuItemFooter}>
+                <Text style={styles.price}>R{item.price}</Text>
+                <TouchableOpacity
+                  style={styles.removeButton}
+                  onPress={() => handleRemoveMenuItem(item.id)}
+                >
+                  <Text style={styles.removeButtonText}>Remove</Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+          ))}
+        </View>
