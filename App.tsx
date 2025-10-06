@@ -137,3 +137,24 @@ const filterMenuItemsByCourse = (course: string): MenuItem[] => {
     Alert.alert('Success', `${newDishName} added to menu!`);
     setCurrentScreen('home');
   };
+
+  // Remove menu item
+  const handleRemoveMenuItem = (id: number) => {
+    const item = menuItems.find(item => item.id === id);
+    if (item) {
+      Alert.alert(
+        'Confirm Remove',
+        `Remove "${item.dishName}" from menu?`,
+        [
+          { text: 'Cancel', style: 'cancel' },
+          {
+            text: 'Remove',
+            style: 'destructive',
+            onPress: () => {
+              setMenuItems(menuItems.filter(item => item.id !== id));
+            },
+          },
+        ]
+      );
+    }
+  };
