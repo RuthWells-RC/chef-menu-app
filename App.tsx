@@ -163,3 +163,16 @@ const filterMenuItemsByCourse = (course: string): MenuItem[] => {
   const navigateToScreen = (screen: string) => {
     setCurrentScreen(screen);
   };
+/ ============================================
+  // RENDER FUNCTIONS FOR EACH SCREEN
+  // ============================================
+
+  // Home Screen - Shows menu with averages
+  const renderHomeScreen = () => {
+    const averages = calculateAveragePriceByCourse();
+    const totalItems = getTotalMenuItems();
+
+    return (
+      <ScrollView style={styles.screenContainer}>
+        <Text style={styles.screenTitle}>🍽️ Christoffel's Menu</Text>
+        <Text style={styles.subtitle}>Private Chef Experience</Text>
