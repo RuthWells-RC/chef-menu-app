@@ -119,3 +119,21 @@ const filterMenuItemsByCourse = (course: string): MenuItem[] => {
 
     setMenuItems([...menuItems, newItem]);
     setNextId(nextId + 1);
+
+    // Clear form
+    setNewDishName('');
+    setNewDescription('');
+    setNewPrice('');
+
+    Alert.alert('Success', `${newDishName} added to menu!`);
+    setCurrentScreen('home');
+};
+  
+// Clear form
+    setNewDishName('');
+    setNewDescription('');
+    setNewPrice('');
+
+    Alert.alert('Success', `${newDishName} added to menu!`);
+    setCurrentScreen('home');
+  };
