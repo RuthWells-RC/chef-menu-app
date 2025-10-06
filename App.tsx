@@ -176,3 +176,9 @@ const filterMenuItemsByCourse = (course: string): MenuItem[] => {
       <ScrollView style={styles.screenContainer}>
         <Text style={styles.screenTitle}>🍽️ Christoffel's Menu</Text>
         <Text style={styles.subtitle}>Private Chef Experience</Text>
+
+{/* Total Items */}
+        <View style={styles.statsCard}>
+          <Text style={styles.statsTitle}>Total Menu Items</Text>
+          <Text style={styles.statsNumber}>{totalItems}</Text>
+        </View>
