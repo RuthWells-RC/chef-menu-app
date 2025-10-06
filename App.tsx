@@ -72,4 +72,21 @@ const filterMenuItemsByCourse = (course: string): MenuItem[] => {
 
   // Get items sorted by rating
   const getItemsSortedByRating = (): MenuItem[] => {
-    const sortedItems = [...menuItems];
+  const sortedItems = [...menuItems];
+    
+    // Bubble sort using FOR loops
+    for (let i = 0; i < sortedItems.length - 1; i++) {
+      for (let j = 0; j < sortedItems.length - i - 1; j++) {
+        const rating1 = sortedItems[j].rating || 0;
+        const rating2 = sortedItems[j + 1].rating || 0;
+
+        if (rating1 < rating2) {
+          const temp = sortedItems[j];
+          sortedItems[j] = sortedItems[j + 1];
+          sortedItems[j + 1] = temp;
+        }
+      }
+    }
+
+    return sortedItems;
+  };
